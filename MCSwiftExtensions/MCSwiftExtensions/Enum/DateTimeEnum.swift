@@ -10,29 +10,29 @@ import Foundation
 public enum DateTimeFormat: String {
     
     /// 日期格式
-    case DATE_FORMAT = "yyyy-MM-dd"
+    case Date = "yyyy-MM-dd"
     
     /// 日期格式(斜線)
-    case DATE_FORMAT_SLASH = "yyyy/MM/dd"
+    case DateSlash = "yyyy/MM/dd"
     
     /// 年月格式
-    case YEAR_MONTH_FORMAT = "yyyy-MM"
+    case YearMonth = "yyyy-MM"
     
     /// 年月格式(斜線)
-    case YEAR_MONTH_FORMAT_SLASH = "yyyy/MM"
+    case YearMonthSlash = "yyyy/MM"
     
     /// 時間格式
-    case TIME_FORMAT = "HH:mm"
+    case Time = "HH:mm"
     
-    /// 日期時間格式(除秒)
-    case DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm"
+    /// 日期時間格式(去除秒數)
+    case DateTime = "yyyy-MM-dd HH:mm"
     
-    /// 日期時間格式(除秒斜線)
-    case DATE_TIME_FORMAT_SLASH = "yyyy/MM/dd HH:mm"
+    /// 日期時間格式(去除秒數斜線)
+    case DateTimeSlash = "yyyy/MM/dd HH:mm"
     
     /// 日期時間格式
-    case DATE_HOUR_MIN_SEC_FORMAT = "yyyy-MM-dd HH:mm:ss"
+    case DateTimes = "yyyy-MM-dd HH:mm:ss"
     
     /// 日期時間格式(斜線)
-    case DATE_HOUR_MIN_SEC_FORMAT_SLASH = "yyyy/MM/dd HH:mm:ss"
+    case DateTimesSlash = "yyyy/MM/dd HH:mm:ss"
 }

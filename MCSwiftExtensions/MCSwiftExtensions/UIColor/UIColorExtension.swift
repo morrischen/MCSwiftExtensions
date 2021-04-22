@@ -12,7 +12,7 @@ extension UIColor {
     
     /// 取出RGB色碼顏色
     /// - Parameter rgb: rgb 色碼
-    convenience init(rgb: Int) {
+    public convenience init(rgb: Int) {
         let r = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
         let g = CGFloat((rgb & 0x00FF00) >>  8) / 255.0
         let b = CGFloat( rgb & 0x0000FF       ) / 255.0
@@ -23,7 +23,7 @@ extension UIColor {
     /// - Parameters:
     ///   - hex: 16進制, 不輸入#
     ///   - alpha: 透明度, 0~1
-    convenience init(hex: String, alpha: CGFloat = 1.0) {
+    public convenience init(hex: String, alpha: CGFloat = 1.0) {
         
         if #available(iOS 13.0, *) {
             

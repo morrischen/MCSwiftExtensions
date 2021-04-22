@@ -12,6 +12,9 @@
 		A5958EFB262FD75B00894522 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958EFA262FD75B00894522 /* StringExtension.swift */; };
 		A5958EFE262FD77800894522 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958EFD262FD77800894522 /* UIColorExtension.swift */; };
 		A5958F01262FD7A600894522 /* UILabelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958F00262FD7A600894522 /* UILabelGradient.swift */; };
+		A5958F132630084000894522 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958F122630084000894522 /* DateExtension.swift */; };
+		A5958F182630145300894522 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958F172630145300894522 /* UISearchBarExtension.swift */; };
+		A5958F1D263023E000894522 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958F1C263023E000894522 /* UITextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		A5958EFA262FD75B00894522 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A5958EFD262FD77800894522 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A5958F00262FD7A600894522 /* UILabelGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelGradient.swift; sourceTree = "<group>"; };
+		A5958F122630084000894522 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		A5958F172630145300894522 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
+		A5958F1C263023E000894522 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 			children = (
 				A5958EEA262FD6D100894522 /* MCSwiftExtensions.h */,
 				A5958EEB262FD6D100894522 /* Info.plist */,
+				A5958F112630081C00894522 /* Date */,
 				A5958EF3262FD6E800894522 /* Enum */,
 				A5958EF4262FD6F300894522 /* String */,
 				A5958EF5262FD6FB00894522 /* UIColor */,
 				A5958EF6262FD70800894522 /* UILabel */,
+				A5958F162630143700894522 /* UISearchBar */,
+				A5958F1B263023C000894522 /* UITextField */,
 			);
 			path = MCSwiftExtensions;
 			sourceTree = "<group>";
@@ -94,6 +103,30 @@
 				A5958F00262FD7A600894522 /* UILabelGradient.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		A5958F112630081C00894522 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				A5958F122630084000894522 /* DateExtension.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		A5958F162630143700894522 /* UISearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				A5958F172630145300894522 /* UISearchBarExtension.swift */,
+			);
+			path = UISearchBar;
+			sourceTree = "<group>";
+		};
+		A5958F1B263023C000894522 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				A5958F1C263023E000894522 /* UITextFieldExtension.swift */,
+			);
+			path = UITextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5958F01262FD7A600894522 /* UILabelGradient.swift in Sources */,
+				A5958F182630145300894522 /* UISearchBarExtension.swift in Sources */,
+				A5958F1D263023E000894522 /* UITextFieldExtension.swift in Sources */,
+				A5958F132630084000894522 /* DateExtension.swift in Sources */,
 				A5958EFB262FD75B00894522 /* StringExtension.swift in Sources */,
 				A5958EF8262FD74300894522 /* DateTimeEnum.swift in Sources */,
 				A5958EFE262FD77800894522 /* UIColorExtension.swift in Sources */,

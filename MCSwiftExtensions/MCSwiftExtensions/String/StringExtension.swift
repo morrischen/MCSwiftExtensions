@@ -12,7 +12,7 @@ extension String {
     //MARK: - Parameters
     
     /// youtube 影片ID
-    var youtubeID: String? {
+    public var youtubeID: String? {
         
         let pattern = "((?<=(v|V)/)|(?<=be/)|(?<=(\\?|\\&)v=)|(?<=embed/))([\\w-]++)"
         let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
@@ -26,7 +26,7 @@ extension String {
     }
     
     /// youtube 影片網址
-    var youtubeVideo: String? {
+    public var youtubeVideo: String? {
         
         let pattern = "((?<=(v|V)/)|(?<=be/)|(?<=(\\?|\\&)v=)|(?<=embed/))([\\w-]++)"
         let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
@@ -43,7 +43,7 @@ extension String {
     }
     
     /// youtube 縮圖網址
-    var youtubeThumbnailImageUrl: String? {
+    public var youtubeThumbnailImageUrl: String? {
         
         let pattern = "((?<=(v|V)/)|(?<=be/)|(?<=(\\?|\\&)v=)|(?<=embed/))([\\w-]++)"
         let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
@@ -60,27 +60,27 @@ extension String {
     }
     
     /// URL轉可讀字串
-    var urlDecoded: String {
+    public var urlDecoded: String {
         return removingPercentEncoding ?? self
     }
     
     /// 可讀字串轉URL
-    var urlEncoded: String {
+    public var urlEncoded: String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
 
     /// 字串是否包含字母
-    var hasLetters: Bool {
+    public var hasLetters: Bool {
         return rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
     }
     
     /// 字串是否包含數字
-    var hasNumbers: Bool {
+    public var hasNumbers: Bool {
         return rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
     }
     
     /// 字串是否只有字母, 不含數字
-    var isAlphabetic: Bool {
+    public var isAlphabetic: Bool {
         
         let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
         let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
@@ -89,7 +89,7 @@ extension String {
     }
     
     /// 字串是否包含一個字母與一個數字
-    var isAlphaNumeric: Bool {
+    public var isAlphaNumeric: Bool {
         
         let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
         let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
@@ -99,7 +99,7 @@ extension String {
     }
     
     /// 是否為https網址
-    var isValidHttpsUrl: Bool {
+    public var isValidHttpsUrl: Bool {
         
         guard let url = URL(string: self) else { return false }
         
@@ -107,7 +107,7 @@ extension String {
     }
     
     /// 是否為http網址
-    var isValidHttpUrl: Bool {
+    public var isValidHttpUrl: Bool {
         
         guard let url = URL(string: self) else { return false }
         
@@ -115,7 +115,7 @@ extension String {
     }
     
     /// 字串是否包含表情符號
-    var containEmoji: Bool {
+    public var containEmoji: Bool {
         // http://stackoverflow.com/questions/30757193/find-out-if-character-in-string-is-emoji
         for scalar in unicodeScalars {
             
@@ -146,7 +146,7 @@ extension String {
     //MARK: - Function
     
     /// 檢查email格式
-    func isValidEmail() -> Bool {
+    public func isValidEmail() -> Bool {
         
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -155,7 +155,7 @@ extension String {
     }
     
     /// 檢查格式，是否符合 開頭是英文字母＋後面9個數字
-    func isValidPersonalID() -> Bool {
+    public func isValidPersonalID() -> Bool {
         
         let regex: String = "^[a-z]{1}[1-2]{1}[0-9]{8}$"
         let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES[c] %@", regex)
@@ -164,12 +164,12 @@ extension String {
     }
     
     /// 多語系字串
-    func localized() -> String {
+    public func localized() -> String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }
     
     /// 移除字串前後空白
-    func trim() -> String {
+    public func trim() -> String {
         return self.trimmingCharacters(in: NSCharacterSet.whitespaces)
     }
     
@@ -177,7 +177,7 @@ extension String {
     /// - Parameters:
     ///   - target: 欲取代的文字
     ///   - withString: 取代的文字
-    func replace(target: String, withString: String) -> String {
+    public func replace(target: String, withString: String) -> String {
         return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }
     
@@ -185,7 +185,7 @@ extension String {
     /// - Parameters:
     ///   - length: 檢查長度
     /// - Returns: Bool
-    func lengthCheck(length: Int) -> Bool {
+    public func lengthCheck(length: Int) -> Bool {
         
         if self.count < length {
             
@@ -202,7 +202,7 @@ extension String {
     ///   - min: 檢查長度最小值
     ///   - max: 檢查長度最大值
     /// - Returns: Bool
-    func lengthCheck(min: Int, max: Int) -> Bool {
+    public func lengthCheck(min: Int, max: Int) -> Bool {
         
         if min <= self.count && self.count <= max {
             
@@ -215,7 +215,7 @@ extension String {
     }
     
     /// 字串轉布林
-    func toBool() -> Bool {
+    public func toBool() -> Bool {
         
         switch self {
         
@@ -232,13 +232,13 @@ extension String {
     
     /// 從第0個字數, 擷取字串到Index位置
     /// - Parameter index: 字串長度
-    func slice(to index: Int) -> String {
+    public func slice(to index: Int) -> String {
         return String(self[..<self.index(self.startIndex, offsetBy: index)])
     }
     
     /// 從Index位置, 擷取字串到結尾
     /// - Parameter index: 字串長度
-    func slice(at index: Int) -> String {
+    public func slice(at index: Int) -> String {
         return String(self[self.index(self.startIndex, offsetBy: index)...])
     }
     
@@ -246,7 +246,7 @@ extension String {
     /// - Parameters:
     ///   - index: 起始位置
     ///   - length: 長度
-    func slicing(from index: Int, length: Int) -> String? {
+    public func slicing(from index: Int, length: Int) -> String? {
         
         guard length >= 0, index >= 0, index < count  else { return nil }
         
@@ -266,7 +266,7 @@ extension String {
         
     /// 日期轉換成民國年
     /// - Parameter format: 日期時間格式
-    func TransToTWDateFormat(format: DateTimeFormat = .DATE_FORMAT) -> String {
+    public func TransToTWDateFormat(format: DateTimeFormat = .Date) -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.rawValue
@@ -298,31 +298,31 @@ extension String {
         
         switch dateFormatter.dateFormat {
             
-        case DateTimeFormat.DATE_FORMAT.rawValue:
+        case DateTimeFormat.Date.rawValue:
             strDate = String(format: "%@-%@-%@", newYear, newMonth, newDay)
             break
             
-        case DateTimeFormat.DATE_FORMAT_SLASH.rawValue:
+        case DateTimeFormat.DateSlash.rawValue:
             strDate = String(format: "%@/%@/%@", newYear, newMonth, newDay)
             break
             
-        case DateTimeFormat.DATE_TIME_FORMAT.rawValue:
+        case DateTimeFormat.DateTime.rawValue:
             let hour = calendar.component(.hour, from: newDate!)
             let min = calendar.component(.minute, from: newDate!)
             strDate = String(format: "%@-%@-%@ %02d:%02d", newYear, newMonth, newDay, hour, min)
             break
             
-        case DateTimeFormat.DATE_TIME_FORMAT_SLASH.rawValue:
+        case DateTimeFormat.DateTimeSlash.rawValue:
             let hour = calendar.component(.hour, from: newDate!)
             let min = calendar.component(.minute, from: newDate!)
             strDate = String(format: "%@/%@/%@ %02d:%02d", newYear, newMonth, newDay, hour, min)
             break
             
-        case DateTimeFormat.YEAR_MONTH_FORMAT.rawValue:
+        case DateTimeFormat.YearMonth.rawValue:
             strDate = String(format: "%@-%@", newYear, newMonth)
             break
             
-        case DateTimeFormat.YEAR_MONTH_FORMAT_SLASH.rawValue:
+        case DateTimeFormat.YearMonthSlash.rawValue:
             strDate = String(format: "%@/%@", newYear, newMonth)
             break
             
@@ -335,7 +335,7 @@ extension String {
     }
     
     /// 轉UTF8編碼字串
-    func utf8EncodedString()-> String {
+    public func utf8EncodedString()-> String {
         
         let messageData = self.data(using: .nonLossyASCII)
         let text = String(data: messageData!, encoding: .utf8)
@@ -346,7 +346,7 @@ extension String {
     /// 轉換成日期
     /// - Parameter format: 轉換格式
     /// - Returns: Date
-    func toDate(format: DateTimeFormat = .DATE_FORMAT) -> Date? {
+    public func toDate(format: DateTimeFormat = .Date) -> Date? {
         
         let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         
@@ -360,7 +360,7 @@ extension String {
     /// 轉換成日期時間
     /// - Parameter format: 轉換格式
     /// - Returns: Date
-    func toDateTime(format: DateTimeFormat = .DATE_TIME_FORMAT) -> Date? {
+    public func toDateTime(format: DateTimeFormat = .DateTime) -> Date? {
         
         let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         
@@ -372,7 +372,7 @@ extension String {
     }
     
     /// 字串根據換行符號切割
-    func lines() -> [String] {
+    public func lines() -> [String] {
         
         var result = [String]()
         

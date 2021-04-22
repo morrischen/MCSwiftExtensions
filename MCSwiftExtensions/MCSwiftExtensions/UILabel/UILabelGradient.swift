@@ -8,35 +8,26 @@
 import Foundation
 import UIKit
 
-class UILabelGradient: UILabel {
+public class UILabelGradient: UILabel {
     
     //MARK: - Enum
-    enum direction: String {
-        case horizontal = "Horizontal"
-        case vertical = "Vertical"
+    public enum Direction: String {
+        case Horizontal = "Horizontal"
+        case Vertical = "Vertical"
     }
-
+    
     //MARK: - Parameters
-    @IBInspectable var startColor: UIColor = .init(hex: "#ffffff") {
-        didSet {
-            applyGradient()
-        }
-    }
+    @IBInspectable var startColor: UIColor = .black
+    @IBInspectable var endColor: UIColor = .black
     
-    @IBInspectable var endColor: UIColor = .init(hex: "#ffffff") {
-        didSet {
-            applyGradient()
-        }
-    }
-    
-    override var text: String? {
+    public override var text: String? {
         didSet {
             applyGradient()
         }
     }
     
     //MARK: - Life Cycle
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         applyGradient()
     }
@@ -48,7 +39,7 @@ class UILabelGradient: UILabel {
     ///   - direction: 漸層方向為水平或垂直
     ///   - startColor: 起始顏色
     ///   - endColor: 結束顏色
-    internal func applyGradient(direction: direction = .horizontal, startColor: UIColor = .black, endColor: UIColor = .black) {
+    public func applyGradient(direction: Direction = .Horizontal, startColor: UIColor = .black, endColor: UIColor = .black) {
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
@@ -56,17 +47,16 @@ class UILabelGradient: UILabel {
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         
         switch direction {
-            
-        case .horizontal:
+        
+        case .Horizontal:
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
             break
             
-        case .vertical:
+        case .Vertical:
             gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
             gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
             break
-            
         }
         
         let textSize = NSAttributedString(string: text ?? "", attributes: [.font: font!]).size()
