@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 日期時間格式列舉
 public enum DateTimeFormat: String {
     
     /// 日期格式

@@ -403,7 +403,7 @@ extension Date {
         return calendar.isDate(self, equalTo: Date(), toGranularity: .year)
     }
     
-    //MARK: - Function
+    //MARK: - Functions
     
     /// SwifterSwift: Date by adding multiples of calendar component.
     ///

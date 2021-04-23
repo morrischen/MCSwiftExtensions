@@ -143,7 +143,7 @@ extension String {
         return false
     }
     
-    //MARK: - Function
+    //MARK: - Functions
     
     /// 檢查email格式
     public func isValidEmail() -> Bool {

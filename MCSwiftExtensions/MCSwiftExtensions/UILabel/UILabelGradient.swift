@@ -32,7 +32,7 @@ public class UILabelGradient: UILabel {
         applyGradient()
     }
     
-    //MARK: - Function
+    //MARK: - Functions
     
     /// 套用漸層文字
     /// - Parameters:

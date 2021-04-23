@@ -10,10 +10,7 @@ import UIKit
 
 extension UISearchBar {
     
-    public enum ViewSide: String {
-        case Left = "Left"
-        case Right = "Right"
-    }
+    //MARK: - Parameters
     
     public var textField: UITextField {
         
@@ -34,12 +31,14 @@ extension UISearchBar {
         fatalError("Could not find text field")
     }
     
+    //MARK: - Functions
+    
     /// 設定UISearchBar Cancel Button 文字/文字顏色/字型
     /// - Parameters:
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setCancelButton(text: String, color: UIColor, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setCancelButton(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) {
         
         let barButtonItem = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         barButtonItem.title = text
@@ -51,25 +50,25 @@ extension UISearchBar {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setSearchBarPlaceholder(text: String, color: UIColor, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setSearchBarPlaceholder(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             // 直接設定顏色會沒作用, 需要delay
-            self.textField.setTextFieldPlaceholder(text: text, color: color, font: font)
+            self.textField.setPlaceholder(text: text, color: color, font: font)
         }
     }
     
-    /// 設定UISearchBar Placeholder 文字/文字顏色/字型
+    /// 設定UISearchBar 放大鏡圖示
     /// - Parameters:
-    ///   - side: Left  / Right
+    ///   - side: 左  / 右
     ///   - image: 圖片
-    ///   - color: 顏色
-    public func setSearchBarImage(side: ViewSide = .Left, image: UIImage, color: UIColor) {
+    ///   - tintColor: 背景顏色
+    public func setSearchBarImage(side: ViewSide = .Left, image: UIImage, tintColor: UIColor) {
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             
             let imageView: UIImageView = .init(image: image)
             imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = color
+            imageView.tintColor = tintColor
             
             switch side {
             
@@ -87,6 +86,8 @@ extension UISearchBar {
                 self.textField.rightViewMode = .always
                 break
                 
+            default:
+                break
             }
         }
     }

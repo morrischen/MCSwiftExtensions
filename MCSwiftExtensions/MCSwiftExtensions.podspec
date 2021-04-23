@@ -16,11 +16,13 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MCSwiftExtensions"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "This is a simple swift extensions library"
   spec.swift_versions = '5.0'
-
   spec.homepage     = "https://github.com/morrischen/MCSwiftExtensions"
+  spec.description  = <<-DESC
+                    This is a simple swift extensions library. Pod install it.
+                   DESC
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 

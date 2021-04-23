@@ -10,6 +10,8 @@ import UIKit
 
 extension UIColor {
     
+    //MARK: - Functions
+    
     /// 取出RGB色碼顏色
     /// - Parameter rgb: rgb 色碼
     public convenience init(rgb: Int) {

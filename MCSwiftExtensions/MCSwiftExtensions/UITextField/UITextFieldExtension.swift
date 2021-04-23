@@ -10,12 +10,15 @@ import UIKit
 
 extension UITextField {
     
+    //MARK: - Functions
+    
     /// 設定UITextField 文字/文字顏色/字型
     /// - Parameters:
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setTextField(text: String, color: UIColor, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setTextField(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17)) {
+        
         self.font = font
         self.text = text
         self.textColor = color
@@ -26,10 +29,10 @@ extension UITextField {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setTextFieldPlaceholder(text: String, color: UIColor, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setPlaceholder(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) {
         
-        var placeholderString = NSMutableAttributedString()
-        placeholderString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: font])
+        let placeholderString = NSMutableAttributedString(string: text)
+        placeholderString.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: text.count))
         placeholderString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSRange(location: 0, length: text.count))
         
         self.attributedPlaceholder = placeholderString
@@ -39,7 +42,7 @@ extension UITextField {
     /// - Parameters:
     ///   - color: 外框顏色
     ///   - borderWidth: 外框寬度
-    public func setTextFieldButtomBorder(color: UIColor, borderWidth: CGFloat) {
+    public func setButtomBorder(color: UIColor, borderWidth: CGFloat) {
         
         let border = CALayer()
         border.borderColor = color.cgColor
@@ -55,11 +58,11 @@ extension UITextField {
     ///   - image: 圖片
     ///   - leftSidePadding: 左邊間距
     ///   - rightSidePadding: 右邊間距
-    public func setTextFieldLeftView(image: UIImage, leftSidePadding: CGFloat, rightSidePadding: CGFloat) {
+    public func setLeftView(image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat) {
         
-        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: (image.size.width) + leftSidePadding + rightSidePadding, height: (image.size.height)))
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: (image.size.width) + leftPadding + rightPadding, height: (image.size.height)))
         
-        let iconView  = UIImageView(frame: CGRect(x: leftSidePadding, y: 0, width: image.size.width, height: image.size.height))
+        let iconView  = UIImageView(frame: CGRect(x: leftPadding, y: 0, width: image.size.width, height: image.size.height))
         
         iconView.image = image
         leftView.addSubview(iconView)
@@ -71,48 +74,63 @@ extension UITextField {
     /// 設定UITextField 右側圖案
     /// - Parameters:
     ///   - image: 圖片
-    ///   - rightSidePadding: 右邊間距
-    public func setTextFieldRightView(image: UIImage, rightSidePadding: CGFloat) {
+    ///   - padding: 右邊間距
+    public func setRightView(image: UIImage, padding: CGFloat) {
         
-        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: (image.size.width) + rightSidePadding, height: (image.size.height)))
+        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: (image.size.width) + padding, height: (image.size.height)))
         rightView.addSubview(UIImageView(image: image))
         
         self.rightView = rightView
         self.rightViewMode = .always
     }
     
-    /// 設定UITextField 左側間距
-    /// - Parameter leftSidePadding: 左邊間距
-    public func setTextFieldLeftView(leftSidePadding: CGFloat) {
+    /// 設定UITextField 間距
+    /// - Parameters:
+    ///   - side: 左 / 右 / 全部
+    ///   - padding: 間距大小
+    public func setPadding(side: ViewSide, padding: CGFloat) {
         
-        let leftView = UIView(frame: CGRect(x: 0,
-                                            y: 0,
-                                            width: leftSidePadding,
-                                            height: (self.frame.size.height)))
-        self.leftView = leftView
-        self.leftViewMode = .always
+        switch side {
+        
+        case .Left:
+            
+            let leftView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: (self.frame.size.height)))
+            self.leftView = leftView
+            self.leftViewMode = .always
+            
+            break
+            
+        case .Right:
+            
+            let rightView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: (self.frame.size.height)))
+            self.rightView = rightView
+            self.rightViewMode = .always
+            
+            break
+            
+        default:
+            
+            let allView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: (self.frame.size.height)))
+            
+            self.leftView = allView
+            self.leftViewMode = .always
+            
+            self.rightView = allView
+            self.rightViewMode = .always
+
+            break
+        }
     }
     
     /// 設定UITextField 右側間距
     /// - Parameter rightSidePadding: 右邊間距
-    public func setTextFieldRightView(rightSidePadding: CGFloat) {
+    public func setRightPadding(padding: CGFloat) {
         
         let rightView = UIView(frame: CGRect(x: 0,
                                              y: 0,
-                                             width: rightSidePadding,
+                                             width: padding,
                                              height: (self.frame.size.height)))
         self.rightView = rightView
         self.rightViewMode = .always
-    }
-
-    /// 設定UITextField 外框
-    /// - Parameters:
-    ///   - color: 外框顏色
-    ///   - borderWidth: 外框寬度
-    ///   - radius: 外框圓角
-    public func setTextFieldBorderColor(color:UIColor, borderWidth:CGFloat, radius:CGFloat) {
-        self.layer.borderColor = color.cgColor
-        self.layer.cornerRadius = radius
-        self.layer.borderWidth = borderWidth
     }
 }
