@@ -32,7 +32,7 @@ extension Bundle {
     
     //MARK: - Functions
 
-    public class func setLanguage(_ language: String?) {
+    public class func setLanguage(_ language: String?) -> Void {
         Bundle.once
         let isLanguageRTL = Bundle.isLanguageRTL(language)
         if (isLanguageRTL) {

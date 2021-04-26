@@ -17,7 +17,7 @@ extension UITextField {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setTextField(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setTextField(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17)) -> Void {
         
         self.font = font
         self.text = text
@@ -29,7 +29,7 @@ extension UITextField {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setPlaceholder(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setPlaceholder(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) -> Void {
         
         let placeholderString = NSMutableAttributedString(string: text)
         placeholderString.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: text.count))
@@ -42,7 +42,7 @@ extension UITextField {
     /// - Parameters:
     ///   - color: 外框顏色
     ///   - borderWidth: 外框寬度
-    public func setButtomBorder(color: UIColor, borderWidth: CGFloat) {
+    public func setButtomBorder(color: UIColor, borderWidth: CGFloat) -> Void {
         
         let border = CALayer()
         border.borderColor = color.cgColor
@@ -58,7 +58,7 @@ extension UITextField {
     ///   - image: 圖片
     ///   - leftSidePadding: 左邊間距
     ///   - rightSidePadding: 右邊間距
-    public func setLeftView(image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat) {
+    public func setLeftView(image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat) -> Void {
         
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: (image.size.width) + leftPadding + rightPadding, height: (image.size.height)))
         
@@ -75,7 +75,7 @@ extension UITextField {
     /// - Parameters:
     ///   - image: 圖片
     ///   - padding: 右邊間距
-    public func setRightView(image: UIImage, padding: CGFloat) {
+    public func setRightView(image: UIImage, padding: CGFloat) -> Void {
         
         let rightView = UIView(frame: CGRect(x: 0, y: 0, width: (image.size.width) + padding, height: (image.size.height)))
         rightView.addSubview(UIImageView(image: image))
@@ -88,7 +88,7 @@ extension UITextField {
     /// - Parameters:
     ///   - side: 左 / 右 / 全部
     ///   - padding: 間距大小
-    public func setPadding(side: ViewSide, padding: CGFloat) {
+    public func setPadding(side: ViewSide, padding: CGFloat) -> Void {
         
         switch side {
         
@@ -124,7 +124,7 @@ extension UITextField {
     
     /// 設定UITextField 右側間距
     /// - Parameter rightSidePadding: 右邊間距
-    public func setRightPadding(padding: CGFloat) {
+    public func setRightPadding(padding: CGFloat) -> Void {
         
         let rightView = UIView(frame: CGRect(x: 0,
                                              y: 0,

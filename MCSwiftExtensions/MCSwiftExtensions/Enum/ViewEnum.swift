@@ -13,3 +13,8 @@ public enum ViewSide: String {
     case Right = "Right"
     case All = "All"
 }
+
+public enum Position {
+    case top
+    case bottom
+}

@@ -39,7 +39,7 @@ public class UILabelGradient: UILabel {
     ///   - direction: 漸層方向為水平或垂直
     ///   - startColor: 起始顏色
     ///   - endColor: 結束顏色
-    public func applyGradient(direction: Direction = .Horizontal, startColor: UIColor = .black, endColor: UIColor = .black) {
+    public func applyGradient(direction: Direction = .Horizontal, startColor: UIColor = .black, endColor: UIColor = .black) -> Void {
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]

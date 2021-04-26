@@ -27,6 +27,7 @@ public class UILabelPadding: UILabel {
     }
     
     public override var intrinsicContentSize: CGSize {
+        
         get {
             var contentSize = super.intrinsicContentSize
             contentSize.height += insets.top + insets.bottom

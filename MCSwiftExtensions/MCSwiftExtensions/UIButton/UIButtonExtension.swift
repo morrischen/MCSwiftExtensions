@@ -17,7 +17,7 @@ extension UIButton {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setButton(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setButton(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17)) -> Void {
         
         self.titleLabel?.font = font
         self.setTitle(text, for:UIControl.State())
@@ -31,7 +31,7 @@ extension UIButton {
     ///   - start: 起始位置
     ///   - offset: 長度
     ///   - state: 狀態
-    public func setAttributedText(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17), start: Int, offset: Int, state: UIControl.State = .normal) {
+    public func setAttributedText(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17), start: Int, offset: Int, state: UIControl.State = .normal) -> Void {
         
         let attrString = NSMutableAttributedString.init(string: text)
         attrString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSMakeRange(start, offset))
@@ -43,7 +43,7 @@ extension UIButton {
     /// - Parameters:
     ///   - image: 圖片
     ///   - textPadding: 與左邊文字間距
-    public func setRightImage(image: UIImage, textPadding:CGFloat) {
+    public func setRightImage(image: UIImage, textPadding:CGFloat) -> Void {
         
         self.setImage(image, for: .normal)
         self.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: self.frame.size.width - image.size.width, bottom: 0, right: 0)
@@ -55,7 +55,7 @@ extension UIButton {
     /// - Parameters:
     ///   - image: 圖片
     ///   - textPadding: 與右邊文字間距
-    public func setLeftImage(image: UIImage, textPadding:CGFloat) {
+    public func setLeftImage(image: UIImage, textPadding:CGFloat) -> Void {
         
         self.setImage(image, for: .normal)
         self.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: self.frame.size.width - image.size.width)
@@ -70,7 +70,7 @@ extension UIButton {
     ///   - shadowColor: 陰影顏色
     ///   - shadowRadius: 陰影圓角
     ///   - opacity: 透明度
-    public func setShadow(backgroundColor: UIColor, backgroundRadius: CGFloat , shadowColor: UIColor, shadowRadius: CGFloat, opacity: Float) {
+    public func setShadow(backgroundColor: UIColor, backgroundRadius: CGFloat , shadowColor: UIColor, shadowRadius: CGFloat, opacity: Float) -> Void {
         
         self.layer.masksToBounds = false
         self.layer.cornerRadius = backgroundRadius

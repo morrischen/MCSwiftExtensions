@@ -12,9 +12,11 @@ extension UIView {
     
     //MARK: - Parameters
     @IBInspectable var cornerRadius: CGFloat {
+        
         get {
             return layer.cornerRadius
         }
+        
         set {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
@@ -22,42 +24,50 @@ extension UIView {
     }
     
     @IBInspectable var borderWidth: CGFloat {
+        
         get {
             return layer.borderWidth
         }
+        
         set {
             layer.borderWidth = newValue
         }
     }
     
     @IBInspectable var borderColor: UIColor? {
+        
         get {
             if let color = layer.borderColor {
                 return UIColor(cgColor: color)
             }
             return nil
         }
+        
         set {
             layer.borderColor = newValue?.cgColor
         }
     }
     
     @IBInspectable var shadowColor: UIColor? {
+        
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor: color)
             }
             return nil
         }
+        
         set {
             layer.shadowColor = newValue?.cgColor
         }
     }
     
     @IBInspectable var shadowRadius: CGFloat {
+        
         get {
             return layer.shadowRadius
         }
+        
         set {
             layer.shadowOffset = CGSize.zero
             layer.shadowRadius = newValue
@@ -67,12 +77,17 @@ extension UIView {
 
     /// 取得view截圖
     public var screenshot: UIImage? {
+        
         UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
+        
         defer {
             UIGraphicsEndImageContext()
         }
+        
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        
         layer.render(in: context)
+        
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
@@ -82,7 +97,7 @@ extension UIView {
     /// - Parameters:
     ///   - image: 圖片
     ///   - mode: 放大模式
-    public func setBackGroundImage(image: UIImage, mode: UIView.ContentMode){
+    public func setBackGroundImage(image: UIImage, mode: UIView.ContentMode) -> Void {
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = image
@@ -95,7 +110,7 @@ extension UIView {
     ///   - color: 外框顏色
     ///   - borderWidth: 外框寬度
     ///   - radius: 外框圓角
-    public func setBorder(color: UIColor, borderWidth: CGFloat, radius: CGFloat) {
+    public func setBorder(color: UIColor, borderWidth: CGFloat, radius: CGFloat) -> Void {
         
         self.layer.borderColor = color.cgColor
         self.layer.cornerRadius = radius
@@ -107,7 +122,7 @@ extension UIView {
     ///   - shadowColor: 陰影顏色
     ///   - shadowRadius: 陰影圓角
     ///   - opacity: 透明度
-    public func setShadow(shadowColor: UIColor, shadowRadius: CGFloat, opacity: Float) {
+    public func setShadow(shadowColor: UIColor, shadowRadius: CGFloat, opacity: Float) -> Void {
                 
         self.layer.masksToBounds = false
         self.layer.shadowColor = shadowColor.cgColor
@@ -118,7 +133,7 @@ extension UIView {
     
     /// 設定UIView高度
     /// - Parameter height: 高度
-    public func setHeightConstraint(height: CGFloat){
+    public func setHeightConstraint(height: CGFloat) -> Void {
         
         let constraintAry:Array = self.constraints
         
@@ -135,7 +150,7 @@ extension UIView {
     /// - Parameters:
     ///   - duration: animation duration in seconds (default is 1 second).
     ///   - completion: optional completion handler to run with animation finishes (default is nil)
-    public func fadeIn(duration: TimeInterval = 1, completion: ((Bool) -> Void)? = nil) {
+    public func fadeIn(duration: TimeInterval = 1, completion: ((Bool) -> Void)? = nil) -> Void {
         
         if isHidden {
             isHidden = false
@@ -151,7 +166,7 @@ extension UIView {
     /// - Parameters:
     ///   - duration: animation duration in seconds (default is 1 second).
     ///   - completion: optional completion handler to run with animation finishes (default is nil)
-    public func fadeOut(duration: TimeInterval = 1, completion: ((Bool) -> Void)? = nil) {
+    public func fadeOut(duration: TimeInterval = 1, completion: ((Bool) -> Void)? = nil) -> Void {
         
         if isHidden {
             isHidden = false

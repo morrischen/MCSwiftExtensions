@@ -432,7 +432,7 @@ extension Date {
     /// - Parameters:
     ///   - component: component type.
     ///   - value: multiples of compnenet to add.
-    public mutating func add(_ component: Calendar.Component, value: Int) {
+    public mutating func add(_ component: Calendar.Component, value: Int) -> Void {
         if let date = calendar.date(byAdding: component, value: value, to: self) {
             self = date
         }

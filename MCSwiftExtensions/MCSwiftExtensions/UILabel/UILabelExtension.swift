@@ -17,7 +17,7 @@ extension UILabel {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setLabel(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setLabel(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17)) -> Void {
         
         self.font = font
         self.text = text
@@ -30,7 +30,7 @@ extension UILabel {
     ///   - color: 文字顏色
     ///   - start: 起始位置
     ///   - offset: 長度
-    public func setAttributedText(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17), start: Int, offset: Int) {
+    public func setAttributedText(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17), start: Int, offset: Int) -> Void {
         
         let attrString = NSMutableAttributedString.init(string: text)
         attrString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSMakeRange(start, offset))
@@ -42,7 +42,7 @@ extension UILabel {
     /// - Parameters:
     ///   - text: 文字
     ///   - color: 文字顏色
-    public func setAttributedUnderLineText(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17), start: Int, offset: Int) {
+    public func setAttributedUnderLineText(text: String, color: UIColor = .black, font: UIFont = .systemFont(ofSize: 17), start: Int, offset: Int) -> Void {
         
         let attrString = NSMutableAttributedString.init(string: text)
         attrString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSMakeRange(start, offset))

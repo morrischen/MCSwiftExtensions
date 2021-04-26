@@ -335,7 +335,7 @@ extension String {
     }
     
     /// 轉UTF8編碼字串
-    public func utf8EncodedString()-> String {
+    public func utf8EncodedString() -> String {
         
         let messageData = self.data(using: .nonLossyASCII)
         let text = String(data: messageData!, encoding: .utf8)

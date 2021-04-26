@@ -14,11 +14,13 @@ extension UIImageView {
     
     /// 產生模糊特效
     /// - Parameter style: UIBlurEffectStyle (default is .light)
-    public func blur(withStyle style: UIBlurEffect.Style = .light) {
+    public func blur(withStyle style: UIBlurEffect.Style = .light) -> Void {
+        
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        // for supporting device rotation
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(blurEffectView)
         clipsToBounds = true
     }

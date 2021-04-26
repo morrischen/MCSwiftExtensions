@@ -38,7 +38,7 @@ extension UISearchBar {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setCancelButton(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setCancelButton(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) -> Void {
         
         let barButtonItem = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         barButtonItem.title = text
@@ -50,7 +50,7 @@ extension UISearchBar {
     ///   - text: 文字
     ///   - color: 文字顏色
     ///   - font: 字型
-    public func setSearchBarPlaceholder(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) {
+    public func setSearchBarPlaceholder(text: String, color: UIColor = .lightGray, font: UIFont = .systemFont(ofSize: 17)) -> Void {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             // 直接設定顏色會沒作用, 需要delay
             self.textField.setPlaceholder(text: text, color: color, font: font)
@@ -62,7 +62,7 @@ extension UISearchBar {
     ///   - side: 左  / 右
     ///   - image: 圖片
     ///   - tintColor: 背景顏色
-    public func setSearchBarImage(side: ViewSide = .Left, image: UIImage, tintColor: UIColor) {
+    public func setSearchBarImage(side: ViewSide = .Left, image: UIImage, tintColor: UIColor) -> Void {
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             
@@ -93,7 +93,7 @@ extension UISearchBar {
     }
     
     /// 設定UISearchBar為透明背景
-    public func clearBackgroundColor() {
+    public func clearBackgroundColor() -> Void {
         guard let UISearchBarBackground: AnyClass = NSClassFromString("UISearchBarBackground") else { return }
 
         for view in subviews {

@@ -29,6 +29,11 @@
 		A5958F132630084000894522 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958F122630084000894522 /* DateExtension.swift */; };
 		A5958F182630145300894522 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958F172630145300894522 /* UISearchBarExtension.swift */; };
 		A5958F1D263023E000894522 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5958F1C263023E000894522 /* UITextFieldExtension.swift */; };
+		A595EC39263649ED009F3EC3 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595EC38263649ED009F3EC3 /* UITableViewExtension.swift */; };
+		A595EC3E26364D3D009F3EC3 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595EC3D26364D3D009F3EC3 /* UICollectionViewExtension.swift */; };
+		A595EC43263651D5009F3EC3 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595EC42263651D5009F3EC3 /* EncodableExtension.swift */; };
+		A595EC4D2636524B009F3EC3 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595EC4C2636524B009F3EC3 /* ArrayExtension.swift */; };
+		A595EC5226365527009F3EC3 /* CopyingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595EC5126365527009F3EC3 /* CopyingExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		A5958F122630084000894522 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A5958F172630145300894522 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
 		A5958F1C263023E000894522 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		A595EC38263649ED009F3EC3 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		A595EC3D26364D3D009F3EC3 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		A595EC42263651D5009F3EC3 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		A595EC4C2636524B009F3EC3 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		A595EC5126365527009F3EC3 /* CopyingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyingExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,14 +180,18 @@
 			children = (
 				A5958EEA262FD6D100894522 /* MCSwiftExtensions.h */,
 				A5958EEB262FD6D100894522 /* Info.plist */,
+				A595EC4626365226009F3EC3 /* Array */,
 				A53BA3C92631694A0089694D /* Bundle */,
+				A595EC5026365502009F3EC3 /* Copying */,
 				A5958F112630081C00894522 /* Date */,
+				A595EC41263651C7009F3EC3 /* Encodable */,
 				A5958EF3262FD6E800894522 /* Enum */,
 				A53BA3CE26316C650089694D /* Language */,
 				A53BA39226313FEC0089694D /* NSObject */,
 				A5958EF4262FD6F300894522 /* String */,
 				A53BA3C4263168570089694D /* UIApplication */,
 				A53BA3BE26315CA90089694D /* UIButton */,
+				A595EC3C26364D28009F3EC3 /* UICollectionView */,
 				A5958EF5262FD6FB00894522 /* UIColor */,
 				A53BA3B6263158940089694D /* UIDevice */,
 				A53BA3D5263173980089694D /* UIImage */,
@@ -185,6 +199,7 @@
 				A5958EF6262FD70800894522 /* UILabel */,
 				A5958F162630143700894522 /* UISearchBar */,
 				A53BA38C26313ECF0089694D /* UIStoryboard */,
+				A595EC37263649DD009F3EC3 /* UITableView */,
 				A5958F1B263023C000894522 /* UITextField */,
 				A53BA3AB263155940089694D /* UIView */,
 			);
@@ -249,6 +264,46 @@
 				A5958F1C263023E000894522 /* UITextFieldExtension.swift */,
 			);
 			path = UITextField;
+			sourceTree = "<group>";
+		};
+		A595EC37263649DD009F3EC3 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				A595EC38263649ED009F3EC3 /* UITableViewExtension.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		A595EC3C26364D28009F3EC3 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A595EC3D26364D3D009F3EC3 /* UICollectionViewExtension.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		A595EC41263651C7009F3EC3 /* Encodable */ = {
+			isa = PBXGroup;
+			children = (
+				A595EC42263651D5009F3EC3 /* EncodableExtension.swift */,
+			);
+			path = Encodable;
+			sourceTree = "<group>";
+		};
+		A595EC4626365226009F3EC3 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				A595EC4C2636524B009F3EC3 /* ArrayExtension.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		A595EC5026365502009F3EC3 /* Copying */ = {
+			isa = PBXGroup;
+			children = (
+				A595EC5126365527009F3EC3 /* CopyingExtension.swift */,
+			);
+			path = Copying;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,23 +385,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A595EC4D2636524B009F3EC3 /* ArrayExtension.swift in Sources */,
 				A53BA3B8263158A20089694D /* UIDeviceExtension.swift in Sources */,
 				A5958F01262FD7A600894522 /* UILabelGradient.swift in Sources */,
 				A53BA386263124960089694D /* ViewEnum.swift in Sources */,
 				A53BA3D7263173C50089694D /* UIImageExtension.swift in Sources */,
 				A53BA38E26313EDC0089694D /* UIStoryboardExtension.swift in Sources */,
+				A595EC39263649ED009F3EC3 /* UITableViewExtension.swift in Sources */,
 				A53BA3CB2631696E0089694D /* BundleExtension.swift in Sources */,
 				A53BA394263140040089694D /* NSObjectExtension.swift in Sources */,
 				A53BA3C6263168760089694D /* UIApplicationExtension.swift in Sources */,
 				A53F1C48263251CF00625756 /* UIImageViewExtension.swift in Sources */,
+				A595EC3E26364D3D009F3EC3 /* UICollectionViewExtension.swift in Sources */,
 				A53BA3AD263155A50089694D /* UIViewExtension.swift in Sources */,
 				A53BA3C026315CB90089694D /* UIButtonExtension.swift in Sources */,
+				A595EC43263651D5009F3EC3 /* EncodableExtension.swift in Sources */,
 				A53BA399263140B10089694D /* UILabelExtension.swift in Sources */,
 				A5958F182630145300894522 /* UISearchBarExtension.swift in Sources */,
 				A5958F1D263023E000894522 /* UITextFieldExtension.swift in Sources */,
 				A53BA38A26313E820089694D /* StoryboardEnum.swift in Sources */,
 				A5958F132630084000894522 /* DateExtension.swift in Sources */,
 				A5958EFB262FD75B00894522 /* StringExtension.swift in Sources */,
+				A595EC5226365527009F3EC3 /* CopyingExtension.swift in Sources */,
 				A53BA3A226314C510089694D /* UILabelPadding.swift in Sources */,
 				A5958EF8262FD74300894522 /* DateTimeEnum.swift in Sources */,
 				A5958EFE262FD77800894522 /* UIColorExtension.swift in Sources */,
