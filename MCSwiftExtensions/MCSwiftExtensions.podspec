@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MCSwiftExtensions"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.summary      = "This is a simple swift extensions library"
   spec.swift_versions = '5.0'
   spec.homepage     = "https://github.com/morrischen/MCSwiftExtensions"
@@ -136,5 +136,6 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
+    spec.dependency   = "UITextView+Placeholder"
 
 end
